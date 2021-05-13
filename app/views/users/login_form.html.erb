@@ -3,7 +3,10 @@
     <div class="form-heading">ログイン</div>
     <div class="form users-form">
       <div class="form-body">
-        <%= form_with model: @user, url: login_user_path, local:true do |f| %>
+        <%= form_with model: @user, url: login_user_path, method: :post, local:true do |f| %>
+        <div class="form-error">
+          <%= @error_message %>
+        </div>
         <p>メールアドレス</p>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"textfield"%>
         <p>パスワード</p>
