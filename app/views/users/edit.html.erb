@@ -7,6 +7,8 @@
           <%= render "layouts/error_messages", model: f.object %>
           <p>ユーザー名</p>
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"textfield" %>
+          <p>プロフィール画像</p>
+          <%= f.attachment_field :image %>
           <p>メールアドレス</p>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"textfield" %>
           <%= f.submit "保存", class:"submit" %>
