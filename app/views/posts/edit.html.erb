@@ -1,0 +1,14 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    <!-- 入力フォームを作成してください -->
+    <div class="form">
+      <div class="form-body">
+        <%= form_with model:@post, local:true do |f| %>
+          <%= f.text_field :content, autofocus: true, autocomplete: "title", class:"textarea"  %>
+          <%= f.submit "編集する", class:"submit"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
