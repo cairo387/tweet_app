@@ -6,7 +6,9 @@
     <ul>
       <h6>—エラー内容—</h6>
       <% model.errors.full_messages.each do |message| %>
-        <li class="mt-2 mb-2 font-weight-bold"><i class="fa fa-exclamation-circle text-danger"></i><%= message %></li>
+        <div class="form-error">
+          <li class="mt-2 mb-2 font-weight-bold"><i class="fa fa-exclamation-circle text-danger"></i><%= message %></li>
+        </div>
 	    <% end %>
     </ul>
   </div>
