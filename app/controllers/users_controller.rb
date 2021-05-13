@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :forbid_login_user, only:[:new, :create, :login, :login_form]
   def index
     @users = User.all
   end
