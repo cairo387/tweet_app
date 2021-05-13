@@ -9,6 +9,8 @@
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"textfield" %>
           <p>メールアドレス</p>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"textfield" %>
+          <p>パスワード</p>
+          <%= f.password_field :password, autofocus: true, autocomplete: "password", class:"textfield" %>
           <%= f.submit "新規登録", class:"submit" %>
         <% end %>
       </div>
