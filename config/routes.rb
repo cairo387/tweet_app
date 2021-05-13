@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/new'
   root to: 'home#top'
   get 'about' => 'home#about'
+  get 'login_user' => 'users#login_form'
 
   resources :posts
   resources :users, only: [:index, :show, :edit, :update, :new, :create]
