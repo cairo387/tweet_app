@@ -1,2 +1,17 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading">ユーザー情報の編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <%= form_with model:@user, local:true do |f| %>
+          <%= render "layouts/error_messages", model: f.object %>
+          <p>ユーザー名</p>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"textfield" %>
+          <p>メールアドレス</p>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"textfield" %>
+          <%= f.submit "保存", class:"submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
