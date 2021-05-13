@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "ユーザー情報の編集をしました"
+      flash[:notice] = "ユーザー編集をしました"
       redirect_to user_path(@user)
     else
       render :edit
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "ユーザーの新規作成をしました"
+      flash[:notice] = "ユーザー登録が完了しました"
       redirect_to user_path(@user)
     else
       render :new
@@ -38,6 +38,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).premit(:name, :email)
+    params.require(:user).permit(:name, :email)
   end
 end

@@ -1,2 +1,17 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">新規ユーザー登録</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <%= form_with model:@user, local:true do |f| %>
+          <%= render "layouts/error_messages", model: f.object %>
+          <p>ユーザー名</p>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"textfield" %>
+          <p>メールアドレス</p>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"textfield" %>
+          <%= f.submit "新規登録", class:"submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
