@@ -24,6 +24,9 @@
         <li><%= link_to "ユーザー一覧", users_path %></li>
         <li><%= link_to "新規登録", new_user_path %></li>
         <li><%=link_to "ログイン", login_user_path %></li>
+        <% if session[:user_id] %>
+          <li><%= link_to "ログアウト", logout_user_path, method: :post %></li>
+        <% end %>
       </ul>
     </header>
     <main>
