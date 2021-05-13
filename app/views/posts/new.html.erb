@@ -4,6 +4,7 @@
     <div class="form">
       <div class="form-body">
         <%= form_with model:@post, local:true do |f| %>
+          <%= render "layouts/error_messages", model: f.object %>
           <%= f.text_field :content, autofocus: true, autocomplete: "title", class:"textarea"  %>
           <%= f.submit "投稿する", class:"submit"%>
         <% end %>
