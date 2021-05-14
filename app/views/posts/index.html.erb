@@ -2,6 +2,13 @@
   <div class="container">
     <% @posts.each do |post| %>
       <div class="posts-index-item">
+        <div class="post-left">
+          <%= attachment_image_tag(post.user, :image, format:'jpeg') %>
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to post.user.name, user_path(post.user)%>
+          </div>
         <%= link_to post.content, post_path(post) %>
       </div>
     <% end %>
