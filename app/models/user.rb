@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-
+  #アソシエーション
+  has_many :posts, dependent: :destroy
+  
   #refile用
   attachment :image
 
