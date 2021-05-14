@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user, except:[:index]
+  before_action :ensure_currect_user, only:[:edit, :update, :destroy]
   def new
     @post = Post.new
   end
@@ -51,5 +52,13 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:content)
+  end
+  
+  def ensure_currect_user
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id
+      flash[:notice] = "不正なアクセスです"
+      redirect_to posts_path
+    end
   end
 end
