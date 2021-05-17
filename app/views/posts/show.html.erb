@@ -11,7 +11,7 @@
       </div>
       <!--likeされたかどうか確認-->
       <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-      いいね！済み
+        <%= link_to "いいね！済み", post_like_path(@post), method: :delete %>
       <% else %>
         <%=link_to "いいね！", post_like_path(@post), method: :post %>
       <% end %>
