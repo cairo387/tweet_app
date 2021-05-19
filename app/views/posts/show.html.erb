@@ -9,12 +9,14 @@
       <div class="post-time">
         <%= @post.created_at %>
       </div>
+
       <!--likeされたかどうか確認-->
       <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-        <%= link_to "いいね！済み", post_like_path(@post), method: :delete %>
+        <span class="fa fa-heart like-btn-unlike"><%= link_to "いいね！済み", post_like_path(@post), method: :delete %></span>
       <% else %>
-        <%=link_to "いいね！", post_like_path(@post), method: :post %>
+       <span class="fa fa-heart like-btn"><%=link_to "いいね！", post_like_path(@post), method: :post %></span>
       <% end %>
+
       <div class="post-menus">
         <% if @user == @current_user %>
           <%= link_to("編集", edit_post_path(@post)) %>
