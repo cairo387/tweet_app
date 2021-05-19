@@ -49,6 +49,9 @@ class PostsController < ApplicationController
       render :show
     end
   end
+  
+  def likes
+  end
 
   private
   def post_params
