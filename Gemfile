@@ -71,4 +71,5 @@ gem 'jquery-rails'
 
 #fontawesome
 gem 'font-awesome-sass', '~> 5.13'
-
+#パスワードハッシュ化
+gem 'bcrypt'
